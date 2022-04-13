@@ -50,6 +50,7 @@
                                             <th>Пол</th>
                                             <th>Действия</th>
                                         </tr>
+
                                     </thead>
                                     <tbody>
                                         <tr>
@@ -63,7 +64,7 @@
                                             <td><?php echo $res['gender']; ?></td>
                                             <td>
                                                 <a href="show.html" class="btn btn-info">Посмотреть</a>
-                                                <a href="edit.html" class="btn btn-warning">Изменить</a>
+                                                <a href="edit.html" class="btn btn-warning" id = "?edit=<?php echo $res['id'];?>">Изменить</a>
                                                 <a href="delete.html" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>

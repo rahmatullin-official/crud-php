@@ -1,3 +1,4 @@
+<?php include "foo.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,22 +37,23 @@
                                 Добавление пользователя
                             </h5>
                             <div class="frame-wrap">
-                                <form>
+                                <?php foreach ($result as $res): ?>
+                                <form action="foo.php" method="POST">
                                     <div class="form-group">
-                                        <label class="form-label" for="simpleinput">Логин</label>
-                                        <input type="text" id="simpleinput" class="form-control" value="Иван">
+                                        <label class="form-label" for="simpleinput">Name</label>
+                                        <input type="text" id="simpleinput" class="form-control" value="<?php echo $res['name']; ?>" name = "name">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-email-2">Email</label>
-                                        <input type="email" id="example-email-2" name="example-email-2" class="form-control" placeholder="Email" value="ivan@example.com">
+                                        <input type="email" id="example-email-2" name="email" class="form-control" placeholder="Email" value="<?php echo $res['email']; ?>" >
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-password">Password</label>
-                                        <input type="password" id="example-password" class="form-control" value="">
+                                        <input type="password" id="example-password" class="form-control" value="<?php echo "" ?>" name = "password">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-select">Роль</label>
-                                        <select class="form-control" id="example-select">
+                                        <select class="form-control" id="example-select" value= "<?php echo $res['role']; ?>" name = "role">
                                             <option selected>Обычный пользователь</option>
                                             <option>Контент-менеджер</option>
                                             <option>Администратор</option>
@@ -59,15 +61,16 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-fileinput">Аватар</label>
-                                        <input type="file" id="example-fileinput" class="form-control-file">
+                                        <input type="file" id="example-fileinput" class="form-control-file" name = "thumb">
 
-                                        <img src="img/demo/authors/josh.png" width="100">
+                                        <img src="img/demo/authors/<?php echo $res['thumb']; ?>" width="100"> !!!!!
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-warning">Изменить</button>
+                                        <button type="submit" class="btn btn-warning" name = "edit">Изменить</button>
                                     </div>
                                 </form>
+                            <?php endforeach ?>
                             </div>
                         </div>
                     </div>

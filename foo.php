@@ -32,8 +32,24 @@ if(isset($_POST["add"])){
 
 // edit user function 
 
-if(isset($_POST['edit'])){
-	
+if (isset($_POST['edit'])) { // подумай как реализовать thumb
+	$sql = "UPDATE users SET thumb = :thumb, name = :name, role = :role, gender = :gender, email = :email, password = :password";
+	$sql = $pdo->prepare($sql);
+	$sql->execute([
+		"thumb" => 
+
+
+	];);
+
+}
+
+// read user edit
+
+if(isset($_GET['edit'])){
+	$sql = "SELECT thumb, name, role, gender, email, password FROM users WHERE id = $_GET['edit']";
+	$sql = $pdo->prepare($sql);
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
 
 ?>
