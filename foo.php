@@ -74,7 +74,7 @@ if (isset($_POST['edit'])) {
 	}
 }
 
-// read user edit
+// read user edit or show
 
 if(isset($_GET['id'])) {
 	$value = $_GET['id'];
@@ -86,8 +86,8 @@ if(isset($_GET['id'])) {
 	
 // delete user 
 
-// if (isset($_GET['delete'])) {
+if (isset($_GET['delete'])) {
 		
-// }
+}
 
 ?>

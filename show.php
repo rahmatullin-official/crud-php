@@ -1,3 +1,4 @@
+<?php include "foo.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +36,7 @@
                             <h5 class="frame-heading">
                                 Обычная таблица
                             </h5>
+                            
                             <div class="frame-wrap">
                                 <table class="table m-0">
                                     <thead>
@@ -48,22 +50,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>
-                                                <img src="img/demo/authors/josh.png" width="75">
-                                            </td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
+                                        <?php foreach($result as $res): ?>
+                                            <tr>    
+                                                <th scope="row"><?php echo $res['id']; ?></th>
+                                                <td>
+                                                    <img src="img/demo/authors/<?php echo $res['thumb']; ?>" width="75">
+                                                </td>
+                                                <td><?php echo $res['name']; ?></td>
+                                                <td><?php echo $res['role']; ?></td>
+                                                <td><?php echo $res['email'] ?></td>
+                                                <td>
+                                                    <form action="GET">
+                                                        <a href="edit.php?id=<?php echo $res['id']; ?>" class="btn btn-warning">Изменить</a>
+                                                        <a href="delete.php?id=<?php echo $res['id']; ?>" class="btn btn-danger">Удалить</a>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
+                       
                         </div>
                     </div>
                 </div>

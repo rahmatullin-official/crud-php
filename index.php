@@ -64,9 +64,9 @@
                                             <td><?php echo $res['gender']; ?></td>
                                             <td>
                                                 <form action="GET">
-                                                    <a href="show.php" class="btn btn-info">Посмотреть</a>
-                                                    <a href="edit.php?id=<?php echo $res['id'];?>" class="btn btn-warning">Изменить</a>
-                                                    <a href="delete.php" class="btn btn-danger" id="?delete=<?php echo $res['id'];?>">Удалить</a>
+                                                    <a href="show.php?id=<?php echo $res['id']; ?>" class="btn btn-info">Посмотреть</a>
+                                                    <a href="edit.php?id=<?php echo $res['id']; ?>" class="btn btn-warning">Изменить</a>
+                                                    <a href="delete.php?id=<?php echo $res['id'];?>" class="btn btn-danger">Удалить</a>
                                                 </form>
                                             </td>
                                         </tr>
