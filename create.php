@@ -36,22 +36,22 @@
                                 Добавление пользователя
                             </h5>
                             <div class="frame-wrap">
-                                <form>
+                                <form action="foo.php" method="POST">
                                     <div class="form-group">
                                         <label class="form-label" for="simpleinput">Логин</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <input type="text" id="simpleinput" class="form-control" name = "name">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-email-2">Email</label>
-                                        <input type="email" id="example-email-2" name="example-email-2" class="form-control" placeholder="Email">
+                                        <input type="email" id="example-email-2" name="example-email-2" class="form-control" placeholder="Email" name="email">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-password">Password</label>
-                                        <input type="password" id="example-password" class="form-control" value="">
+                                        <input type="password" id="example-password" class="form-control" value="" name="password">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-select">Роль</label>
-                                        <select class="form-control" id="example-select">
+                                        <select class="form-control" id="example-select" name ="role">
                                             <option>Обычный пользователь</option>
                                             <option>Контент-менеджер</option>
                                             <option>Администратор</option>
@@ -59,11 +59,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="example-fileinput">Аватар</label>
-                                        <input type="file" id="example-fileinput" class="form-control-file">
+                                        <input type="file" id="example-fileinput" class="form-control-file" name = "thumb" formenctype="multipart/form-data">
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">Добавить</button>
+                                        <button type="submit" class="btn btn-info" name = "add">Добавить</button>
                                     </div>
                                 </form>
                             </div>
