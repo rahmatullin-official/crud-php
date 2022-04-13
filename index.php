@@ -38,7 +38,7 @@
                             </h5>
                             <div class="frame-wrap">
                             	<div class="form-group">
-                            		<a href="create.html" class="btn btn-success">Добавить пользователя</a>
+                            		<a href="create.php" class="btn btn-success">Добавить пользователя</a>
                             	</div>
                                 <table class="table m-0">
                                     <thead>
@@ -65,7 +65,7 @@
                                             <td>
                                                 <a href="show.html" class="btn btn-info">Посмотреть</a>
                                                 <a href="edit.html" class="btn btn-warning" id = "?edit=<?php echo $res['id'];?>">Изменить</a>
-                                                <a href="delete.html" class="btn btn-danger">Удалить</a>
+                                                <a href="delete.html" class="btn btn-danger" id="?delete=<?php echo $res['id'];?>">Удалить</a>
                                             </td>
                                         </tr>
                                         <?php endforeach; ?>
