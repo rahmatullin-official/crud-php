@@ -36,10 +36,11 @@
                             <h5 class="frame-heading">
                                 Добавление пользователя
                             </h5>
-                            <div class="frame-wrap">
-                                <?php foreach ($result as $res): ?>
-                                <form action="foo.php" method="POST">
+                            <?php foreach ($result as $res): ?>
+                            <div class="frame-wrap" id = "edit<?php echo $res['id'];?>">
+                                <form action="foo.php" method="POST"  enctype="multipart/form-data">
                                     <div class="form-group">
+                                        <input type="hidden" value="<?php echo $res['id'];?>" name="id">
                                         <label class="form-label" for="simpleinput">Name</label>
                                         <input type="text" id="simpleinput" class="form-control" value="<?php echo $res['name']; ?>" name = "name">
                                     </div>

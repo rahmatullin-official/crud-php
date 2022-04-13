@@ -63,9 +63,11 @@
                                             <td><?php echo $res['role']; ?></td>
                                             <td><?php echo $res['gender']; ?></td>
                                             <td>
-                                                <a href="show.html" class="btn btn-info">Посмотреть</a>
-                                                <a href="edit.html" class="btn btn-warning" id = "?edit=<?php echo $res['id'];?>">Изменить</a>
-                                                <a href="delete.html" class="btn btn-danger" id="?delete=<?php echo $res['id'];?>">Удалить</a>
+                                                <form action="GET">
+                                                    <a href="show.php" class="btn btn-info">Посмотреть</a>
+                                                    <a href="edit.php?id=<?php echo $res['id'];?>" class="btn btn-warning">Изменить</a>
+                                                    <a href="delete.php" class="btn btn-danger" id="?delete=<?php echo $res['id'];?>">Удалить</a>
+                                                </form>
                                             </td>
                                         </tr>
                                         <?php endforeach; ?>
