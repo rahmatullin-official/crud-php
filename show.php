@@ -62,7 +62,7 @@
                                                 <td>
                                                     <form action="GET">
                                                         <a href="edit.php?id=<?php echo $res['id']; ?>" class="btn btn-warning">Изменить</a>
-                                                        <a href="delete.php?id=<?php echo $res['id']; ?>" class="btn btn-danger">Удалить</a>
+                                                        <a href="delete.php?delete=<?php echo $res['id']; ?>" class="btn btn-danger">Удалить</a>
                                                     </form>
                                                 </td>
                                             </tr>

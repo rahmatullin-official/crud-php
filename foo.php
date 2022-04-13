@@ -16,12 +16,11 @@ function upload_file($filename, $tmp_name){
 }
 
 // read db
-if (!isset($_GET['id'])) {
-	$sql = "SELECT * FROM users";
-	$sql = $pdo->prepare($sql);
-	$sql->execute();
-	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
+
+$sql = "SELECT * FROM users";
+$sql = $pdo->prepare($sql);
+$sql->execute();
+$result = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 // add user function 
 
@@ -87,7 +86,12 @@ if(isset($_GET['id'])) {
 // delete user 
 
 if (isset($_GET['delete'])) {
-		
+	$value = $_GET['delete'];
+	$sql = "DELETE FROM users WHERE id = $value";
+	$sql = $pdo->prepare($sql);
+	$sql->execute();
+	if ($sql) {
+		header("Location: /index.php");
+	}
 }
-
 ?>
