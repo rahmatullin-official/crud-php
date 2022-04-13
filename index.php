@@ -1,3 +1,4 @@
+<?php include "foo.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,20 +53,22 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">1</th>
+                                        <?php foreach ($result as $res): ?>
+                                            <th scope="row"><?php echo $res['id']; ?></th>
                                             <td>
-                                                <img src="img/demo/authors/josh.png" width="75">
+                                                <img src="img/demo/authors/<?php echo $res['thumb']; ?>" width="75">
                                             </td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <td><?php echo $res['name']; ?></td>
+                                            <td><?php echo $res['role']; ?></td>
+                                            <td><?php echo $res['gender']; ?></td>
                                             <td>
                                                 <a href="show.html" class="btn btn-info">Посмотреть</a>
                                                 <a href="edit.html" class="btn btn-warning">Изменить</a>
                                                 <a href="delete.html" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <?php endforeach; ?>
+                                       <!--  <tr>
                                             <th scope="row">2</th>
                                             <td>
                                                 <img src="img/demo/authors/jovanni.png" width="75">
@@ -106,7 +109,7 @@
                                                 <a href="edit.html" class="btn btn-warning">Изменить</a>
                                                 <a href="delete.html" class="btn btn-danger">Удалить</a>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
